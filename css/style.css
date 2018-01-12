@@ -1,0 +1,8 @@
+div.canvas-container {
+  text-align: center;
+}
+
+canvas#view {
+  border: 1px solid #dbdbe8;
+  background-color: #fbfafa;
+}
