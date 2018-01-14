@@ -19,12 +19,23 @@
             <h3 class="panel-title">WebGL Project</h3>
           </div>
           <div class="panel-body canvas-container" style="text-align: center;">
-            <canvas id="view" width="300" height="200">Brak wsparcia dla elementu HTML5 typu canvas.</canvas>
+            <canvas id="view" width="500" height="400">Brak wsparcia dla elementu HTML5 typu canvas.</canvas>
           </div>
+
+          <div style="text-align:center; margin-bottom: 10px">
+            <form class="rotationCheckboxes" style="padding-bottom: 10px;">
+              <input type="checkbox" id="rotateX"> Rotacja X&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" id="rotateY"> Rotacja Y&nbsp;&nbsp;&nbsp;
+              <input type="checkbox" id="rotateZ"> Rotacja Z
+            </form>
+            <button class="btn btn-default" type="submit" onclick="runWebGL();">Animate</button>
+          </div>
+
         </div>
       </div>
     </div>
 
+    <script src="js/matrix.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
