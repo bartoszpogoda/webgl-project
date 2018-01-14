@@ -2,33 +2,43 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>WebGL Project</title>
     <link rel="stylesheet" href="css/provided/bootstrap.min.css">
+    <link rel="stylesheet" href="css/provided/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="js/provided/jquery-3.2.1.min.js"></script>
+    <script src="js/provided/jquery-ui.js"></script>
     <script src="js/provided/bootstrap.min.js"></script>
+    <script src="js/provided/bootstrap-notify.js"></script>
   </head>
   <body>
 
+    <div class="container">
+      <div class="row" style="margin-top: 25px;">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">WebGL Project - Sierpinski carpet</h3>
+            </div>
+            <div class="panel-body canvas-container" style="text-align: center;">
+              <canvas id="view" width="500" height="400" style="max-width: 100%">No support for HTML5 element of type canvas.</canvas>
+            </div>
 
-    <div class="row" style="margin-top: 50px;">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">WebGL Project</h3>
-          </div>
-          <div class="panel-body canvas-container" style="text-align: center;">
-            <canvas id="view" width="500" height="400">Brak wsparcia dla elementu HTML5 typu canvas.</canvas>
-          </div>
+            <div style="text-align:center; margin-bottom: 10px">
 
-          <div style="text-align:center; margin-bottom: 10px">
-            <form class="rotationCheckboxes" style="padding-bottom: 10px;">
-              <input type="checkbox" id="rotateX"> Rotacja X&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="rotateY"> Rotacja Y&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="rotateZ"> Rotacja Z
-            </form>
-            <button class="btn btn-default" type="submit" onclick="runWebGL();">Animate</button>
+              Perturbation: <span id="perturbationPreview"></span>
+              <div id="perturbationSlider" style="width: 50%; margin: auto; margin-bottom: 10px;"></div>
+
+
+              Depth: <span id="depthPreview"></span>
+              <div id="depthSlider" style="width: 50%; margin: auto; margin-bottom: 10px;"></div>
+
+              <button class="btn btn-default" type="submit" onclick="runWebGL();">Render</button>
+
+            </div>
           </div>
 
         </div>
@@ -36,6 +46,7 @@
     </div>
 
     <script src="js/matrix.js"></script>
+    <script src="js/fractal.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
