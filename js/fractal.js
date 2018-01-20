@@ -17,6 +17,7 @@ class CarpetDrawer {
 
   renderCarpet(topLeftCorner, sideLength) {
     this._renderCarpet(0, topLeftCorner, sideLength)
+    this.glContext.flush();
   }
 
   /* PRIVATE METHODS */
@@ -113,8 +114,6 @@ class CarpetDrawer {
   			}
   		}
   	}
-
-    this.glContext.flush();
   }
 
 }
