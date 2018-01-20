@@ -248,7 +248,7 @@ Czworościan został uzyskany poprzez narysowanie \textbf{czterech} \textbf{tró
 
 Przykład, na podstawie którego została stworzona wyżej opisana funkcjonalność, zawierał pewną niedoskonałość (chociaż można by równie dobrze nazwać ją "dodatkową funkcjonalnością") związaną z przyśpieszaniem animacji każdorazowo po wciśnięciu przycisku "Animate".
 
-Niedoskonałość wynikała z każdorazowego dodawania funkcji zwrotnej przy wciśnięciu "Animate" za pomocą funkcji requestAnimationFrame obiektu typu Window. Funkcja ta przy wywołaniu rejestruje kolejną funkcję (zadaną argumentem), która zostanie uruchomiona przed przerysowaniem zawartości ekranu przez przeglądarkę, czyli zazwyczaj około 60 razy na sekundę.  Rejestrowanie kolejnych callback'ów za każdym razem powodowało wywołanie tej samej funkcji wiele razy, co skutkowało widocznym zwielokrotnieniem szybkości animacji.
+Niedoskonałość wynikała z każdorazowego dodawania funkcji zwrotnej przy wciśnięciu "Animate" za pomocą funkcji \textit{requestAnimationFrame} obiektu typu \textit{Window}. Funkcja ta przy wywołaniu rejestruje kolejną funkcję (zadaną argumentem), która zostanie uruchomiona przed przerysowaniem zawartości ekranu przez przeglądarkę, czyli zazwyczaj około 60 razy na sekundę.  Rejestrowanie kolejnych callback'ów za każdym razem powodowało wywołanie tej samej funkcji wiele razy, co skutkowało widocznym zwielokrotnieniem szybkości animacji.
 
 Przykładowym obejściem problemu, które zostało zrealizowane w ramach projektu, było utworzenie flagi, która zostaje ustawiona przy pierwszym uruchomieniu animacji. Przy następnych wciśnięciach przycisku "Animate" funkcje zwrotne nie są rejestrowane na nowo, ze względu na wykrycie ustawionej flagi.
 
@@ -275,7 +275,7 @@ function gl_draw() {
 
 \subsection{Wyrenderowanie fraktala 2D}
 
-Projekt został rozbudowany o wyrenderowanie dywanu Sierpińskiego. Cała logika renderowania została umieszczona w klasie CarpetDrawer, której deklaracje metod zostały przedstawione na poniższym diagramie.
+Projekt został rozbudowany o wyrenderowanie dywanu Sierpińskiego. Cała logika renderowania została umieszczona w klasie \textit{CarpetDrawer}, której deklaracje metod zostały przedstawione na poniższym diagramie.
 
 \begin{figure}[H]
 \centering
@@ -359,7 +359,7 @@ _renderSquare(topLeftCorner, sideLength, randomColor) {
 \newpage
 \subsubsection{Renderowanie dywanu Sierpińskiego}
 
-Po zaimplementowaniu oraz przetestowaniu poprawności działania powyższych funkcji pomocniczych, zostały utworzone funkcje renderCarpet  oraz_renderCarpet. Funkcja renderCarpet startuje rekurencyjną procedurę renderowania kolejnych poziomów głębokości dywanu Sierpińskiego. W każdym etapie rekurencji wyrenderowanych zostało osiem kwadratów dookoła wypełnionych losowymi kolorami oraz jeden kwadrat wewnątrz wypełniony kolorem tła. Do wyliczonych pozycji kwadratów zostały zaaplikowane losowe perturbacje.
+Po zaimplementowaniu oraz przetestowaniu poprawności działania powyższych funkcji pomocniczych, zostały utworzone funkcje \textit{renderCarpet} oraz \textit{_renderCarpet}. Funkcja \textit{renderCarpet} startuje rekurencyjną procedurę renderowania kolejnych poziomów głębokości dywanu Sierpińskiego. W każdym etapie rekurencji wyrenderowanych zostało osiem kwadratów dookoła wypełnionych losowymi kolorami oraz jeden kwadrat wewnątrz wypełniony kolorem tła. Do wyliczonych pozycji kwadratów zostały zaaplikowane losowe perturbacje.
 
 \begin{lstlisting}[caption=Definicja funkcji renderCarpet]
 renderCarpet(topLeftCorner, sideLength) {
@@ -428,7 +428,7 @@ $("#perturbationSlider").slider({
 });
 \end{lstlisting}
 
-Parametry ustawione za pomocą suwaków są przekazywane do modelu (obiektu klasy CarpetDrawer) po wciśnięciu przycisku "Render". Następnie wywoływana jest funkcja renderCarpet, która renderuje dywan o lewym górnym wierzchołku (-1, 1) i długości boku 2, co przy domyślnym ustawieniu pozycji "kamery" skutkuje pokryciem całego obszaru rysowania.
+Parametry ustawione za pomocą suwaków są przekazywane do modelu (obiektu klasy \textit{CarpetDrawer}) po wciśnięciu przycisku "Render". Następnie wywoływana jest funkcja \textit{renderCarpet}, która renderuje dywan o lewym górnym wierzchołku (-1, 1) i długości boku 2, co przy domyślnym ustawieniu pozycji "kamery" skutkuje pokryciem całego obszaru rysowania.
 
 \begin{lstlisting}[caption=Metoda wywołująca się przy nacisnięciu przycisku "Render"]
 function gl_draw() {
